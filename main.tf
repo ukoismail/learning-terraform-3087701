@@ -52,7 +52,7 @@ module "alb" {
   vpc_id  = module.blog_vpc.vpc_id
   subnets = module.blog_vpc.public_subnets
 
-  security_group_id = module.blog_sg.security_group_id
+   vpc_security_group_ids = [module.blog_sg.security_group_id]
 
   listeners = {
     ex-http = {
